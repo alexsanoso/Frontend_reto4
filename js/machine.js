@@ -151,7 +151,7 @@ function actualizarMaquinaria(id){
     } 
 }
 
-// Función para borrar una maquina
+// Función para borrar una maquinaria
 function borrarMaquinaria(id){
     var urlServicio = "http://localhost:8080/api/Machine/"+ id;
     $.ajax({

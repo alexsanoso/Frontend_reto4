@@ -27,17 +27,18 @@
     </header>
 
     <div class="container-reservacion">
-        <table class="table" id="tabla-reservacion">
-            <th>ID Reservación</th>
-            <th>Fecha inicio</th>
-            <th>Fecha devolución</th>
-            <th>Estado</th>
-            <th>Maquinaria</th>
-            <th>Cliente</th>
-            <th>Calificación</th>
-            <th>Acciones</th>
-            
-        </table>
+        <div class="table-responsive">
+            <table class="table" id="tabla-reservacion">
+                <th>ID Reservación</th>
+                <th>Fecha inicio</th>
+                <th>Fecha devolución</th>
+                <th>Estado</th>
+                <th>Maquinaria</th>
+                <th>Cliente</th>
+                <th>Calificación</th>
+                <th>Acciones</th>
+            </table>
+        </div>
         <br>
         <button class="button btnAcT" id="actualizar-tabla-reservacion">Actualizar Tabla Reservación</button>
         <br><div class="casilla-texto">
@@ -45,6 +46,7 @@
         
         <h5 class="subtitulos">AGREGAR RESERVACION</h5>
         <form>
+            
             <div class="casilla-texto">
                 <label for="fecha-inicio"><b>Fecha de Inicio</b></label>
                 <input type="date" class='form-control' id="escribir-fechaInicio-reservacion" placeholder="Escribe fecha inicio" required>
@@ -53,6 +55,7 @@
                 <label for="fecha-devolucion"><b>Fecha de devolución</b></label>
                 <input type="date" class='form-control' id="escribir-fechaDevolucion-reservacion" placeholder="Escribe fecha devolucion" required>
             </div>
+
             <div class="casilla-texto">
                 <label for="estado"><b>Estado</b></label>
                 <select class="form-control" id="estado-act-reserva" type="text" required>
@@ -64,13 +67,13 @@
             </div>
 
             <div class="casilla-texto">
-                <label for="id-Cliente">Id Cliente</label>
+                <label for="id-Cliente"><b>Id Cliente</b></label>
                 <select class="form-control" id="escribir-idCliente-reservacion" type="number" required>
                     <option hidden value="">Seleccionar Cliente</option>
                 </select>
             </div>
             <div class="casilla-texto">
-                <label for="id-Maquinaria">Id Maquinaria</label>
+                <label for="id-Maquinaria"><b>Id Maquinaria</b></label>
                 <select class="form-control" id="escribir-idMaquinaria-reservacion" type="number" required>
                     <option hidden value="">Seleccionar Maquinaria</option>
                 </select>
@@ -79,8 +82,6 @@
                 <br><button class="button btnD" id="agregar-reservacion-boton">Agregar Reservación</button>
             </div>
         </form>
-        
-        
     </div>
 </body>
 </html>

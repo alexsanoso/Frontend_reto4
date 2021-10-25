@@ -12,10 +12,11 @@
     <script type="text/javascript" language="javascript" src="/js/category.js"></script>
 </head>
 <body>
-    <div class="titulo">
-        <h1>VENTA DE MÁQUINARIA</h1>
-    </div>
+    
     <header>
+        <div class="titulo">
+            <h1>VENTA DE MÁQUINARIA</h1>
+        </div>
         <nav class="barra-principal">
             <a href="/html/index.html" class="boton-barra">Inicio</a>
             <a href="/html/category.html" class="boton-barra">Categorias</a>
@@ -26,12 +27,14 @@
         </nav>
     </header>
     <div class="container-categoria">
-        <table class="table" id="tabla-categoria">
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Maquinaria</th>
-            <th>Acción</th>
-        </table>
+        <div class="table-responsive">
+            <table class="table" id="tabla-categoria">
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Maquinaria</th>
+                <th>Acción</th>
+            </table>
+        </div>
         <br>
         <button class="button btnAcT" id="actualizar-tabla-categoria">Actualizar Tabla Categoria</button>
         <br><div class="casilla-texto">
@@ -40,11 +43,11 @@
         <h5 class="subtitulos">AGREGAR CATEGORIA</h5>
         <form>
             <div class="casilla-texto">
-                <label for="name"><b>Nombre</b></label>
+                <label for="name"><b>Nombre:</b></label>
                 <input type="text" class='form-control' id="escribir-nombre-categoria" placeholder="Escribe nombre" required>
             </div>
             <div class="casilla-texto">
-                <label for="descripción"><b>Descripción</b></label>
+                <label for="descripción"><b>Descripción:</b></label>
                 <input type="text" class='form-control' id="escribir-descripcion-categoria" placeholder="Escribe descripción" required>
             </div>
             <div>

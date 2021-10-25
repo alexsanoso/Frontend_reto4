@@ -27,11 +27,13 @@
     </header>
 
     <div class="container-mensaje">
-        <table class="table" id="tabla-mensaje">
-            <th>Mensaje</th>
-            <th>Máquinaria</th>
-            <th>Cliente</th>
-        </table>
+        <div class="table-responsive">
+            <table class="table" id="tabla-mensaje">
+                <th>Mensaje</th>
+                <th>Máquinaria</th>
+                <th>Cliente</th>
+            </table>
+        </div>
         <br>
         <button class="button btnAcT" id="actualizar-tabla-mensaje">Actualizar Tabla Mensaje</button>
         <br><div class="casilla-texto">
@@ -43,13 +45,13 @@
                 <input type="text" class='form-control' id="escribir-cuadro-mensaje"  placeholder="Escribe un mensaje" required>
             </div>
             <div class="casilla-texto">
-                <label for="id-Cliente">Id Cliente</label>
+                <label for="id-Cliente"><b>Cliente</b></label>
                 <select class="form-control" id="id-cliente-mensaje" type="number" required>
                     <option hidden value="">Seleccionar Cliente</option>
                 </select>
             </div>
             <div class="casilla-texto">
-                <label for="id-Maquinaria">Id Maquinaria</label>
+                <label for="id-Maquinaria"><b>Id Maquinaria</b></label>
                 <select class="form-control" id="id-maquinaria-mensaje" type="number" required>
                     <option hidden value="">Seleccionar Maquinaria</option>
                 </select>
