@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel = "stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/category.js"></script>
+</head>
+<body>
+    <div class="titulo">
+        <h1>VENTA DE MÁQUINARIA</h1>
+    </div>
+    <header>
+        <nav class="barra-principal">
+            <a href="/html/index.html" class="boton-barra">Inicio</a>
+            <a href="/html/category.html" class="boton-barra">Categorias</a>
+            <a href="/html/machine.html" class="boton-barra">Máquinarias</a>
+            <a href="/html/client.html" class="boton-barra">Clientes</a>
+            <a href="/html/message.html" class="boton-barra">Mensajes</a>
+            <a href="/html/reservation.html" class="boton-barra">Reservaciones</a>
+        </nav>
+    </header>
+    <div class="container-categoria">
+        <table class="table" id="tabla-categoria">
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Maquinaria</th>
+            <th>Acción</th>
+        </table>
+        <br>
+        <button class="button btnAcT" id="actualizar-tabla-categoria">Actualizar Tabla Categoria</button>
+        <br><div class="casilla-texto">
+        <br></div>
+    
+        <h5 class="subtitulos">AGREGAR CATEGORIA</h5>
+        <form>
+            <div class="casilla-texto">
+                <label for="name"><b>Nombre</b></label>
+                <input type="text" class='form-control' id="escribir-nombre-categoria" placeholder="Escribe nombre" required>
+            </div>
+            <div class="casilla-texto">
+                <label for="descripción"><b>Descripción</b></label>
+                <input type="text" class='form-control' id="escribir-descripcion-categoria" placeholder="Escribe descripción" required>
+            </div>
+            <div>
+                <br><button class="button btnD" id="agregar-categoria-boton">Agregar Categoria</button>
+            </div>
+        </form>
+        
+    
+    </div>
+</body>
+</html>

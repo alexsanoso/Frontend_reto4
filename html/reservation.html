@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel = "stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="/js/reservation.js"></script>
+</head>
+<body>
+    <div class="titulo">
+        <h1>VENTA DE MÁQUINARIA</h1>
+    </div>
+    <header>
+        <nav class="barra-principal">
+            <a href="/html/index.html" class="boton-barra">Inicio</a>
+            <a href="/html/category.html" class="boton-barra">Categorias</a>
+            <a href="/html/machine.html" class="boton-barra">Máquinarias</a>
+            <a href="/html/client.html" class="boton-barra">Clientes</a>
+            <a href="/html/message.html" class="boton-barra">Mensajes</a>
+            <a href="/html/reservation.html" class="boton-barra">Reservaciones</a>
+        </nav>
+    </header>
+
+    <div class="container-reservacion">
+        <table class="table" id="tabla-reservacion">
+            <th>ID Reservación</th>
+            <th>Fecha inicio</th>
+            <th>Fecha devolución</th>
+            <th>Estado</th>
+            <th>Maquinaria</th>
+            <th>Cliente</th>
+            <th>Calificación</th>
+            <th>Acciones</th>
+            
+        </table>
+        <br>
+        <button class="button btnAcT" id="actualizar-tabla-reservacion">Actualizar Tabla Reservación</button>
+        <br><div class="casilla-texto">
+        <br></div>
+        
+        <h5 class="subtitulos">AGREGAR RESERVACION</h5>
+        <form>
+            <div class="casilla-texto">
+                <label for="fecha-inicio"><b>Fecha de Inicio</b></label>
+                <input type="date" class='form-control' id="escribir-fechaInicio-reservacion" placeholder="Escribe fecha inicio" required>
+            </div>
+            <div class="casilla-texto">
+                <label for="fecha-devolucion"><b>Fecha de devolución</b></label>
+                <input type="date" class='form-control' id="escribir-fechaDevolucion-reservacion" placeholder="Escribe fecha devolucion" required>
+            </div>
+            <div class="casilla-texto">
+                <label for="estado"><b>Estado</b></label>
+                <select class="form-control" id="estado-act-reserva" type="text" required>
+                <option hidden value="">Seleccionar estado</option>
+                <option>Programed</option>
+                <option>Created</option>
+                <option>Cancelled</option>
+                </select>
+            </div>
+
+            <div class="casilla-texto">
+                <label for="id-Cliente">Id Cliente</label>
+                <select class="form-control" id="escribir-idCliente-reservacion" type="number" required>
+                    <option hidden value="">Seleccionar Cliente</option>
+                </select>
+            </div>
+            <div class="casilla-texto">
+                <label for="id-Maquinaria">Id Maquinaria</label>
+                <select class="form-control" id="escribir-idMaquinaria-reservacion" type="number" required>
+                    <option hidden value="">Seleccionar Maquinaria</option>
+                </select>
+            </div>
+            <div>
+                <br><button class="button btnD" id="agregar-reservacion-boton">Agregar Reservación</button>
+            </div>
+        </form>
+        
+        
+    </div>
+</body>
+</html>
