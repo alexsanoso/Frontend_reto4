@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Actualizar el menu de selección de categorias
     $.ajax({
-        url: "http://localhost:8080/api/Category/all",
+        url: "http://129.151.109.151:8080/api/Category/all",
         type: "GET",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
     // GET para actualizar la tabla de maquinas
     $("#act-tabla-maquinaria").click(function () {
-        var urlServicio = "http://localhost:8080/api/Machine/all";
+        var urlServicio = "http://129.151.109.151:8080/api/Machine/all";
         $("#tabla-maquinaria tbody").empty();
         console.log(urlServicio);
         $.ajax({
@@ -89,8 +89,8 @@ $(document).ready(function () {
                     
                     salidaFila = "<tr><td>" + nombre + "</td><td>" +
                         marca + "</td><td>" + año + "</td><td>" + descripcion + "</td><td>" +
-                        categoria + "</td><td>" + mensajes + "</td><td>" + reservaciones + "</td><td>" + "<button onclick='borrarMaquinaria("+result[i]["id"] +")'>Borrar</button>" + 
-                        "<button onclick='actualizarMaquinaria("+ result[i]["id"] +")'>Editar</button>" + "</td><tr>";
+                        categoria + "</td><td>" + mensajes + "</td><td>" + reservaciones + "</td><td class='celda-accion'>" + "<button class='button btnB' onclick='borrarMaquinaria("+result[i]["id"] +")'>Borrar</button>" + 
+                        "<button class='button btnA' onclick='actualizarMaquinaria("+ result[i]["id"] +")'>Editar</button>" + "</td><tr>";
 
                     $("#tabla-maquinaria tbody").append(salidaFila);
 
@@ -102,7 +102,7 @@ $(document).ready(function () {
     // POST para agregar una maquina
     $("#agregar-maquinaria-boton").click(function() {
 
-        var urlServicio = "http://localhost:8080/api/Machine/save";
+        var urlServicio = "http://129.151.109.151:8080/api/Machine/save";
         var name = $("#escribir-nombre-maquinaria").val();
         var marca = $("#escribir-marca-maquinaria").val();
         var año = parseInt($("#escribir-año-maquinaria").val());
@@ -131,7 +131,7 @@ $(document).ready(function () {
 // Función para actualizar una maquina
 function actualizarMaquinaria(id){
 
-    var urlServicio = "http://localhost:8080/api/Machine/update";
+    var urlServicio = "http://129.151.109.151:8080/api/Machine/update";
     var name = $("#escribir-nombre-maquinaria").val();
     var marca = $("#escribir-marca-maquinaria").val();
     var año = parseInt($("#escribir-año-maquinaria").val());
@@ -153,7 +153,7 @@ function actualizarMaquinaria(id){
 
 // Función para borrar una maquinaria
 function borrarMaquinaria(id){
-    var urlServicio = "http://localhost:8080/api/Machine/"+ id;
+    var urlServicio = "http://129.151.109.151:8080/api/Machine/"+ id;
     $.ajax({
         url: urlServicio,
         type: "DELETE",

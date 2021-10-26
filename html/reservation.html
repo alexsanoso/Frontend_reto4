@@ -56,16 +56,7 @@
                 <input type="date" class='form-control' id="escribir-fechaDevolucion-reservacion" placeholder="Escribe fecha devolucion" required>
             </div>
 
-            <div class="casilla-texto">
-                <label for="estado"><b>Estado</b></label>
-                <select class="form-control" id="estado-act-reserva" type="text" required>
-                <option hidden value="">Seleccionar estado</option>
-                <option>Programed</option>
-                <option>Created</option>
-                <option>Cancelled</option>
-                </select>
-            </div>
-
+            
             <div class="casilla-texto">
                 <label for="id-Cliente"><b>Id Cliente</b></label>
                 <select class="form-control" id="escribir-idCliente-reservacion" type="number" required>
@@ -76,6 +67,16 @@
                 <label for="id-Maquinaria"><b>Id Maquinaria</b></label>
                 <select class="form-control" id="escribir-idMaquinaria-reservacion" type="number" required>
                     <option hidden value="">Seleccionar Maquinaria</option>
+                </select>
+            </div>
+            
+            <div class="casilla-texto">
+                <label for="estado"><b>Estado</b></label>
+                <select class="form-control" id="estado-act-reserva" type="text" required>
+                <option hidden value="">Seleccionar estado</option>
+                <option>Programado</option>
+                <option>Cancelado</option>
+                <option>Realizado</option>
                 </select>
             </div>
             <div>

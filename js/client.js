@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // GET para actualizar la tabla de clientes
     $("#actualizar-tablacliente-boton").click(function () {
-        var urlServicio = "http://localhost:8080/api/Client/all";
+        var urlServicio = "http://129.151.109.151:8080/api/Client/all";
         $("#tabla-cliente tbody").empty();
         $.ajax({            
             url: urlServicio,
@@ -62,8 +62,8 @@ $(document).ready(function () {
                     reservaciones = JSON.stringify(result[i]["reservations"]);
 
                     salidaFila = "<tr><td>" + id + "</td><td>" + nombre + "</td><td>" + email + "</td><td>" + edad + "</td><td>" + mensajes + "</td><td>" + 
-                        reservaciones + "</td><td>" + "<button onclick='borrarClient("+ result[i]["idClient"] +")'>Borrar</button>" + 
-                        "<button onclick='actualizarClient("+ result[i]["idClient"] +")'>Editar</button>" + "</td><tr>";
+                        reservaciones + "</td><td class='celda-accion'>" + "<button class='button btnB' onclick='borrarClient("+ result[i]["idClient"] +")'>Borrar</button>" + 
+                        "<button class='button btnA' onclick='actualizarClient("+ result[i]["idClient"] +")'>Editar</button>" + "</td><tr>";
 
                     $("#tabla-cliente tbody").append(salidaFila);
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     // POST para agregar un cliente
     $("#agregar-cliente-boton").click(function () {
-        var urlServicio = "http://localhost:8080/api/Client/save";        
+        var urlServicio = "http://129.151.109.151:8080/api/Client/save";        
         var name = $("#escribir-nombre-cliente").val();
         var email = $("#escribir-correo-cliente").val();
         var password = $("#escribir-contraseña-cliente").val();
@@ -96,7 +96,7 @@ $(document).ready(function () {
 //PUT para actualizar un cliente
 
 function actualizarClient(id){
-    var urlServicio = "http://localhost:8080/api/Client/update";
+    var urlServicio = "http://129.151.109.151:8080/api/Client/update";
 
     var name = $("#escribir-nombre-cliente").val();
     var password = $("#escribir-contraseña-cliente").val();
@@ -118,7 +118,7 @@ function actualizarClient(id){
 // Funcion para borrar un cliente
 function borrarClient(id){
 
-    var urlServicio = "http://localhost:8080/api/Client/"+ id;
+    var urlServicio = "http://129.151.109.151:8080/api/Client/"+ id;
 
     $.ajax({
         url: urlServicio,

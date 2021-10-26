@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Para actualizar el menu de selección del cliente
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://129.151.109.151:8080/api/Client/all",
         type: "GET",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -25,7 +25,7 @@ $(document).ready(function () {
     })
     // Para actualizar el menu de selección del maquinaria
     $.ajax({
-        url: "http://localhost:8080/api/Machine/all",
+        url: "http://129.151.109.151:8080/api/Machine/all",
         type: "GET",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -46,7 +46,7 @@ $(document).ready(function () {
     })
     // GET para actualizar la tabla de Reservaciones
     $("#actualizar-tabla-reservacion").click(function (){
-        var urlServicio = "http://localhost:8080/api/Reservation/all";
+        var urlServicio = "http://129.151.109.151:8080/api/Reservation/all";
         console.log(urlServicio)
         $("#tabla-reservacion tbody").empty();
         $.ajax({
@@ -105,8 +105,8 @@ $(document).ready(function () {
 
                     salidaFila = "<tr><td>" + idReservacion + "</td><td>" + fechaInicio + "</td><td>" + 
                         fechaDevolucion + "</td><td>" + estado + "</td><td>" + maquinaria + 
-                        "</td><td>" + cliente + "</td><td>" + score + "</td> + <td>" + "<button onclick='borrarReserva("+result[i]["idReservation"] +")'>Borrar</button>" + 
-                        "<button onclick='actualizarReserva("+ result[i]["idReservation"] +")'>Editar</button>" + "</td></tr>";
+                        "</td><td>" + cliente + "</td><td>" + score + "</td> + <td class='celda-accion'>" + "<button class='button btnB' onclick='borrarReserva("+result[i]["idReservation"] +")'>Borrar</button>" + 
+                        "<button class='button btnA' onclick='actualizarReserva("+ result[i]["idReservation"] +")'>Editar</button>" + "</td></tr>";
 
                     $("#tabla-reservacion tbody").append(salidaFila);
 
@@ -117,7 +117,7 @@ $(document).ready(function () {
 
     // POST para agregar una reservación
     $("#agregar-reservacion-boton").click(function (){
-        var urlServicio = "http://localhost:8080/api/Reservation/save";
+        var urlServicio = "http://129.151.109.151:8080/api/Reservation/save";
         var fechaInicio = $("#escribir-fechaInicio-reservacion").val();
         var fechaDevolucion = $("#escribir-fechaDevolucion-reservacion").val();
         var cliente = $("#escribir-idCliente-reservacion").val();
@@ -142,7 +142,7 @@ $(document).ready(function () {
 
 // Funcion para actualizar (PUT) cada reserva
 function actualizarReserva(idReservacion){
-    var urlServicio = "http://localhost:8080/api/Reservation/update";
+    var urlServicio = "http://129.151.109.151:8080/api/Reservation/update";
 
     var fechaInicio = $("#escribir-fechaInicio-reservacion").val();
     var fechaDevolucion = $("#escribir-fechaDevolucion-reservacion").val();
@@ -165,7 +165,7 @@ function actualizarReserva(idReservacion){
 
 // Función para borrar (Delete) cada reserva
 function borrarReserva(idReservacion){
-    var urlServicio = "http://localhost:8080/api/Reservation/" + idReservacion;
+    var urlServicio = "http://129.151.109.151:8080/api/Reservation/" + idReservacion;
 
     $.ajax({
         url: urlServicio,

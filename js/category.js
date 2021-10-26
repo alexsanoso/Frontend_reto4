@@ -3,7 +3,7 @@ $(document).ready(function () {
     
     // GET para actualizar la tabla de Gamas
     $("#actualizar-tabla-categoria").click(function (){
-        var urlServicio = "http://localhost:8080/api/Category/all";
+        var urlServicio = "http://129.151.109.151:8080/api/Category/all";
 
         $("#tabla-categoria tbody").empty();
         $.ajax({
@@ -50,8 +50,8 @@ $(document).ready(function () {
                     maquinaria = JSON.stringify(maquinaria);
 
                     salidaFila = "<tr><td>" + nombre + "</td><td>" + descripcion + "</td><td>" +
-                        maquinaria + "</td><td>" + "<button onclick='borrarCategory("+result[i]["id"] +")'>Borrar</button>" + 
-                        "<button onclick='actualizarCategory("+ result[i]["id"] +")'>Editar</button>" + "</td><tr>";
+                        maquinaria + "</td><td class='celda-accion'>" + "<button class='button btnB' onclick='borrarCategory("+result[i]["id"] +")'>Borrar</button>" + 
+                        "<button class='button btnA' onclick='actualizarCategory("+ result[i]["id"] +")'>Editar</button>" + "</td><tr>";
 
 
                     $("#tabla-categoria tbody").append(salidaFila);
@@ -64,7 +64,7 @@ $(document).ready(function () {
     // POST para agregar una categoria
     $("#agregar-categoria-boton").click(function (){
         
-        var urlServicio = "http://localhost:8080/api/Category/save";
+        var urlServicio = "http://129.151.109.151:8080/api/Category/save";
         var name = $("#escribir-nombre-categoria").val();
         var descripcion = $("#escribir-descripcion-categoria").val();
 
@@ -85,7 +85,7 @@ $(document).ready(function () {
 
 // Función para actualizar una categoria
 function actualizarCategory(id){
-    var urlServicio = "http://localhost:8080/api/Category/update";
+    var urlServicio = "http://129.151.109.151:8080/api/Category/update";
     var name = $("#escribir-nombre-categoria").val();
     var descripcion = $("#escribir-descripcion-categoria").val();
 
@@ -103,7 +103,7 @@ function actualizarCategory(id){
 
 // Función para borrar una categoria
 function borrarCategory(id){
-    var urlServicio = "http://localhost:8080/api/Category/"+ id;
+    var urlServicio = "http://129.151.109.151:8080/api/Category/"+ id;
 
     $.ajax({
         url: urlServicio,

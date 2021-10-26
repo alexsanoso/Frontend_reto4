@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // Para actualizar el menu de selección del cliente
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://129.151.109.151:8080/api/Client/all",
         type: "GET",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -25,7 +25,7 @@ $(document).ready(function () {
     })
     // Para actualizar el menu de selección del maquinaria
     $.ajax({
-        url: "http://localhost:8080/api/Machine/all",
+        url: "http://129.151.109.151:8080/api/Machine/all",
         type: "GET",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -46,7 +46,7 @@ $(document).ready(function () {
     })
     // GET para actualizar la tabla de Mensaje
     $("#actualizar-tabla-mensaje").click(function () {
-        var urlServicio = "http://localhost:8080/api/Message/all";
+        var urlServicio = "http://129.151.109.151:8080/api/Message/all";
         $("#tabla-mensaje tbody").empty();
         $.ajax({
             url: urlServicio,
@@ -93,8 +93,8 @@ $(document).ready(function () {
                     cliente = JSON.stringify(result[i]["client"]);
 
                     salidaFila = "<tr><td>" + mensaje + "</td><td>" +
-                        maquinaria + "</td><td>" + cliente + "</td> + <td>" + "<button onclick='borrarMensaje("+result[i]["idMessage"] +")'>Borrar</button>" + 
-                        "<button onclick='actualizarMensaje("+ result[i]["idMessage"] +")'>Editar</button>" + "</td></tr>";
+                        maquinaria + "</td><td>" + cliente + "</td> + <td class='celda-accion'>" + "<button class='button btnB' onclick='borrarMensaje("+result[i]["idMessage"] +")'>Borrar</button>" + 
+                        "<button class='button btnA' onclick='actualizarMensaje("+ result[i]["idMessage"] +")'>Editar</button>" + "</td></tr>";
 
                     $("#tabla-mensaje tbody").append(salidaFila);
 
@@ -105,7 +105,7 @@ $(document).ready(function () {
 
     // POST para agregar un mensaje
     $("#agregar-mensaje-boton").click(function () {
-        var urlServicio = "http://localhost:8080/api/Message/save";
+        var urlServicio = "http://129.151.109.151:8080/api/Message/save";
         var mensaje = $("#escribir-cuadro-mensaje").val();
         var cliente = parseInt($("#id-cliente-mensaje").val());
         var maquinaria = parseInt($("#id-maquinaria-mensaje").val()); 
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
 // Función para actualizar un mensaje
 function actualizarMensaje(idMensaje){
-    var urlServicio = "http://localhost:8080/api/Message/update";
+    var urlServicio = "http://129.151.109.151:8080/api/Message/update";
 
     var mensaje = $("#escribir-cuadro-mensaje").val();
               
@@ -144,7 +144,7 @@ function actualizarMensaje(idMensaje){
 
 // Función para borrar un mensaje
 function borrarMensaje(idMensaje){
-    var urlServicio = "http://localhost:8080/api/Message/" + idMensaje;
+    var urlServicio = "http://129.151.109.151:8080/api/Message/" + idMensaje;
 
     $.ajax({
         url: urlServicio,
